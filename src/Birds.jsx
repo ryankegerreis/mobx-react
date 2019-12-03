@@ -7,8 +7,6 @@ class Birds extends Component {
 	handleSubmit = e => {
 		e.preventDefault();
 
-		console.log(e);
-
 		this.props.BirdStore.addBird(this.birdInput.value);
 		e.target.reset();
 	};
@@ -18,7 +16,6 @@ class Birds extends Component {
 
 		return (
 			<div>
-				{console.log(this.props.BirdStore)}
 				<h2>You have {BirdStore.birdCount} birds</h2>
 				<form onSubmit={e => this.handleSubmit(e)}>
 					<input
@@ -30,7 +27,6 @@ class Birds extends Component {
 				</form>
 				<ul>
 					{BirdStore.birds.map(eachBird => (
-						// console.log(eachBird);
 						<li key={eachBird}>{eachBird}</li>
 					))}
 				</ul>
